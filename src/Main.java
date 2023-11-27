@@ -31,8 +31,8 @@ public class Main {
         grafo.adicionarAresta(R5,R4, 1);
 
 
-        Vertice origem = R4;
-        Vertice destino = R1;
+        Vertice origem = R3;
+        Vertice destino = R2;
 
         grafo.dijkstra(origem, destino);
 

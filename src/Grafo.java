@@ -19,9 +19,9 @@ class Grafo {
         origem.adicionarVizinho(aresta);
     }
 
-    public void dijkstra(Vertice inicio, Vertice destino) {  // dijkstra modificado para receber inicio e destino
+    public void dijkstra(Vertice inicio, Vertice destino) {
         inicio.menorDistancia = 0;
-        PriorityQueue<Vertice> fila = new PriorityQueue<>(); // comparar distancia
+        PriorityQueue<Vertice> fila = new PriorityQueue<>((v1, v2) -> Double.compare(v1.menorDistancia, v2.menorDistancia));
         fila.addAll(vertices);
 
         while (!fila.isEmpty()) {
@@ -51,7 +51,7 @@ class Grafo {
         for (Vertice vertice = destino; vertice != null; vertice = vertice.anterior) {
             caminho.add(vertice);
         }
-        Collections.reverse(caminho); //
+        Collections.reverse(caminho);
         return caminho;
     }
 }
